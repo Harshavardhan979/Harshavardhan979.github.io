@@ -1,0 +1,58 @@
+{
+  "profile": {
+    "name": "HARSHAVARDHAN K",
+    "email": "itsharshakofficial@gmail.com",
+    "role": "Software Engineer",
+    "phone": "7760220979",
+    "summary": "Computer Science and Engineering student passionate about software development and modern web technologies. Experienced in building basic web applications using HTML, CSS, and JavaScript, with a strong foundation in programming concepts and problem solving. Interested in learning full stack development and improving technical skills through projects and continuous learning. Seeking opportunities to apply my knowledge, gain industry experience, and contribute to developing efficient and innovative software solutions.",
+    "image": "photo.jpeg"
+  },
+  "workExperiences": [],
+  "skills": {
+    "descriptions": [
+      "JavaScript",
+      "Python",
+      "HTML",
+      "CSS",
+      "Git",
+      "SQL"
+    ]
+  },
+  "education": [
+    {
+      "institution": "SRI VIDYA SAMSKRUTHI INTERNATIONAL SCHOOL",
+      "degree": "10th",
+      "year": "2020-2021"
+    },
+    {
+      "institution": "SDC COLLEGE",
+      "degree": "12th",
+      "year": "2022 - 2023"
+    },
+    {
+      "institution": "PRESIDENCY UNIVERSITY",
+      "degree": "Engineering",
+      "year": "2023- 2027"
+    }
+  ],
+  "projects": [
+    {
+      "name": "IOT-BASED SMART TUNNEL SYSTEM",
+      "description": "Developed a small tunnel monitoring prototype using Raspberry Pi to observe environmental conditions inside a tunnel. The system collects sensor data and helps monitor conditions such as temperature or movement, demonstrating basic IoT and embedded system integration. Technologies used: Raspberry Pi, Ultrasonic Sensors.",
+      "source_link": "https://github.com/Harshavardhan979",
+      "live_link": null
+    },
+    {
+      "name": "SMART WATERING SYSTEM",
+      "description": "Developed an automated plant watering system using Arduino and a soil moisture sensor. The system monitors the moisture level of the soil and automatically turns on a water pump when the soil becomes dry. This project helps conserve water and ensures plants receive the required amount of moisture. It demonstrates practical knowledge of Arduino programming, sensors, and basic IoT-based automation. Technologies used: Arduino.",
+      "source_link": "https://github.com/Harshavardhan979",
+      "live_link": null
+    },
+    {
+      "name": "Smart India Hackathon (SIH)-college level",
+      "description": "Participated in the Smart India Hackathon and secured a position among the Top 5 teams at the college level. Contributed to developing a Student Navigator website designed to help students easily find academic resources, campus information, and guidance. Worked collaboratively in a team to design and implement the solution within the hackathon timeline.",
+      "source_link": "https://github.com/Harshavardhan979",
+      "live_link": ""
+    }
+  ]
+}
