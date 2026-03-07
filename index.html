@@ -260,12 +260,7 @@ if (res.ok) return await res.json();
             </div>
         </div>
 
-        <!-- Resume Button -->
-        <a href="Harshavardhan_Resume.pdf" target="_blank"
-           class="inline-block mt-4 px-4 py-2 bg-black text-white dark:bg-white dark:text-black rounded-lg hover:opacity-80 transition">
-           Download Resume
-        </a>
-
+    
                 </div>
 
                 <div class="my-2 flex flex-wrap items-center gap-2">
@@ -303,6 +298,10 @@ if (res.ok) return await res.json();
                 <p class="text-neutral-600 dark:text-neutral-400">${resume.profile.summary || fallbackSummary}
                 </p>
             </div>
+            <a href="Harshavardhan_Resume.pdf" target="_blank"
+class="inline-block mt-4 px-5 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+📄 Download Resume
+</a>
 
             ${resume.profile.image ? `<div
                 class="size-40 bg-amber-700 rounded-md overflow-hidden border border-neutral-300 dark:border-neutral-600">
