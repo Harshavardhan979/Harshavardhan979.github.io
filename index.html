@@ -118,10 +118,8 @@
         // Load resume data
         async function loadResume() {
             try {
-                if (window.location.hostname.includes("github.io") || window.location.hostname.includes("vercel.app")) {
-                    const res = await fetch("./resume.json");
-                    if (res.ok) return await res.json();
-                }
+               const res = await fetch("./resume.json");
+if (res.ok) return await res.json();
                 const urlParams = new URLSearchParams(window.location.search);
         const dataUrl = urlParams.get("dataUrl");
         if (dataUrl) {
@@ -560,3 +558,4 @@
 
 
 </html>
+
