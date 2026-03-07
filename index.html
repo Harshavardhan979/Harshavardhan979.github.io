@@ -245,70 +245,65 @@ if (res.ok) return await res.json();
                 </ul>
             </aside>
         </nav>
-
-    <!-- hero -->
+<!-- hero -->
 <section class="w-full pt-18 md:pt-28 md:flex justify-between md:px-6 mb-2">
     <div class="md:max-w-lg lg:max-w-xl">
         <div class="md:flex gap-2 my-2 items-center">
             <h1 class="text-4xl font-bold">👋 I'm ${resume.profile.name}</h1>
-
             <div
-                class="rounded-lg mt-2 w-fit p-px bg-linear-to-r from-neutral-300 via-neutral-400 to-neutral-300 dark:from-neutral-600 dark:via-neutral-300 dark:to-neutral-600">
+                class="rounded-lg mt-2 w-fit p-px bg-linear-to-r from-neutral-300 via-neutral-400 to-neutral-300  dark:from-neutral-600 dark:via-neutral-300 dark:to-neutral-600">
                 <div class="rounded-lg bg-white dark:bg-neutral-900 px-1">
                     <p>${resume.profile.role}</p>
                 </div>
             </div>
         </div>
 
-    
-                </div>
-
-                <div class="my-2 flex flex-wrap items-center gap-2">
-                    ${resume.profile.location ? `<div
-                        class="text-neutral-500 flex items-center gap-1 transition-colors ease-in-out hover:text-neutral-900 dark:hover:text-neutral-200">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="animate-pulse size-4" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path
-                                d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
-                            <circle cx="12" cy="10" r="3" />
-                        </svg>
-                        <p>${resume.profile.location}</p>
-                    </div>` : ''}
-                    <div
-                        class="text-neutral-500 transition-colors ease-in-out hover:text-neutral-900 dark:hover:text-neutral-200 flex items-center gap-1">
-                        <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
-                            <rect x="2" y="4" width="20" height="16" rx="2" />
-                        </svg> <a href="mailto:${resume.profile.email}" class="hover:underline">${resume.profile.email}</a>
-                    </div>
-                    ${resume.profile.phone ? `<div
-                        class="text-neutral-500 transition-colors ease-in-out hover:text-neutral-900 dark:hover:text-neutral-200 flex items-center gap-1">
-                        <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path
-                                d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
-                        </svg> <a href="tel:${resume.profile.phone}" class="hover:underline">${resume.profile.phone}</a>
-                    </div>` : ''}
-                </div>
-
-                <p class="text-neutral-600 dark:text-neutral-400">${resume.profile.summary || fallbackSummary}
-                </p>
-            </div>
-            <a href="Harshavardhan_Resume.pdf" target="_blank"
-class="inline-block mt-4 px-5 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-📄 Download Resume
-</a>
-
-            ${resume.profile.image ? `<div
-                class="size-40 bg-amber-700 rounded-md overflow-hidden border border-neutral-300 dark:border-neutral-600">
-                <img src="${resume.profile.image}"
-                    class="w-full h-full object-cover" alt="${resume.profile.name}">
+        <div class="my-2 flex flex-wrap items-center gap-2">
+            ${resume.profile.location ? `<div
+                class="text-neutral-500 flex items-center gap-1 transition-colors ease-in-out hover:text-neutral-900 dark:hover:text-neutral-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="animate-pulse size-4" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                    <circle cx="12" cy="10" r="3" />
+                </svg>
+                <p>${resume.profile.location}</p>
             </div>` : ''}
-        </section>
+
+            <div
+                class="text-neutral-500 transition-colors ease-in-out hover:text-neutral-900 dark:hover:text-neutral-200 flex items-center gap-1">
+                <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
+                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                </svg>
+                <a href="mailto:${resume.profile.email}" class="hover:underline">${resume.profile.email}</a>
+            </div>
+
+            ${resume.profile.phone ? `<div
+                class="text-neutral-500 transition-colors ease-in-out hover:text-neutral-900 dark:hover:text-neutral-200 flex items-center gap-1">
+                <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
+                </svg>
+                <a href="tel:${resume.profile.phone}" class="hover:underline">${resume.profile.phone}</a>
+            </div>` : ''}
+        </div>
+
+        <p class="text-neutral-600 dark:text-neutral-400">
+            ${resume.profile.summary || fallbackSummary}
+        </p>
+    </div>
+
+    ${resume.profile.image ? `<div
+        class="size-40 bg-amber-700 rounded-md overflow-hidden border border-neutral-300 dark:border-neutral-600">
+        <img src="${resume.profile.image}" class="w-full h-full object-cover" alt="${resume.profile.name}">
+    </div>` : ''}
+</section>
 
         ${hasProjects ? `<!-- projects -->
         <section id="projects"
@@ -566,5 +561,6 @@ class="inline-block mt-4 px-5 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-
 
 
 </html>
+
 
 
