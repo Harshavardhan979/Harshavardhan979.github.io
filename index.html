@@ -90,7 +90,8 @@
 
     <script>
         // Global functions for theme and menu
-        window.toggleTheme = function () {
+        
+    function toggleTheme() {
 
     const html = document.documentElement;
 
@@ -109,7 +110,7 @@
 
     }
 
-};
+}
         window.openMenu = function () {
             const menu = document.getElementById("mobileMenu");
             const overlay = document.getElementById("overlay");
@@ -630,6 +631,7 @@ if (res.ok) return await res.json();
 
 
 </html>
+
 
 
 
