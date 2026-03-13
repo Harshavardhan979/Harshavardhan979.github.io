@@ -91,12 +91,25 @@
     <script>
         // Global functions for theme and menu
         window.toggleTheme = function () {
-            const isDark = document.documentElement.classList.toggle("dark");
-            const theme = isDark ? "dark" : "light";
-            localStorage.setItem("theme", theme);
-            document.documentElement.style.colorScheme = theme;
-        };
 
+    const html = document.documentElement;
+
+    if (html.classList.contains("dark")) {
+
+        html.classList.remove("dark");
+        html.style.colorScheme = "light";
+        localStorage.setItem("theme", "light");
+
+    } 
+    else {
+
+        html.classList.add("dark");
+        html.style.colorScheme = "dark";
+        localStorage.setItem("theme", "dark");
+
+    }
+
+};
         window.openMenu = function () {
             const menu = document.getElementById("mobileMenu");
             const overlay = document.getElementById("overlay");
@@ -617,6 +630,7 @@ if (res.ok) return await res.json();
 
 
 </html>
+
 
 
 
