@@ -436,6 +436,7 @@ if (res.ok) return await res.json();
                 <div
                     class="rounded-lg transition-all cursor-default hover:bg-neutral-300 dark:hover:bg-neutral-700 p-1 w-fit ring-1 ring-neutral-500">
                     ${skill}</div>
+                    
                 `).join('')}
             </div>
         </section>` : ''}
@@ -509,6 +510,35 @@ if (res.ok) return await res.json();
                     class=" shadow-[inset_0_2px_4px_rgba(0,0,0,0.12)]  dark:shadow-[inset_0_2px_4px_rgba(255,255,255,0.08)] transition focus-visible:transition-all duration-150 border-none outline-none focus-visible:ring-4 focus-visible:ring-neutral-500 focus-visible:ring-offset-0 focus-visible:rounded-lg w-auto md:right-100 scale-[0.9] border border-neutral-500/50 font-semibold hover:bg-neutral-200 dark:hover:bg-neutral-700 bg-neutral-300 dark:bg-neutral-800 cursor-pointer py-2.5 px-3 flex justify-center items-center gap-1 rounded-lg "
                     href="mailto:${resume.profile.email}?subject=Contact&amp;body=">Send Message</a>
             </div>
+                        </div>
+
+            <div class="flex flex-wrap gap-3 mt-4 justify-center md:justify-start">
+
+                <a href="mailto:itsharshakofficial@gmail.com"
+                   class="px-4 py-2 bg-neutral-800 text-white rounded-lg hover:bg-neutral-700 transition">
+                    Email
+                </a>
+
+                <a href="https://github.com/Harshavardhan979"
+                   target="_blank"
+                   class="px-4 py-2 bg-neutral-800 text-white rounded-lg hover:bg-neutral-700 transition">
+                    GitHub
+                </a>
+
+                <a href="https://linkedin.com"
+                   target="_blank"
+                   class="px-4 py-2 bg-neutral-800 text-white rounded-lg hover:bg-neutral-700 transition">
+                    LinkedIn
+                </a>
+
+                <a href="/resume"
+                   class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                    Resume
+                </a>
+
+            </div>
+
+        </section>
         </section>
 
         <!-- footer -->
@@ -561,6 +591,7 @@ if (res.ok) return await res.json();
 
 
 </html>
+
 
 
 
