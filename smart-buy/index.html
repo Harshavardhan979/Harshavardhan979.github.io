@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Buy</title>
+
+<style>
+body {
+  margin:0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg,#0f172a,#020617);
+  color:white;
+  display:flex;
+  justify-content:center;
+  padding:20px;
+}
+
+.container {
+  width:100%;
+  max-width:500px;
+}
+
+.card {
+  background:#111827;
+  padding:15px;
+  border-radius:10px;
+  margin-bottom:15px;
+}
+
+input, select {
+  width:100%;
+  padding:10px;
+  margin:5px 0;
+  border:none;
+  border-radius:8px;
+  background:#1f2937;
+  color:white;
+}
+
+button {
+  width:100%;
+  padding:10px;
+  border:none;
+  border-radius:8px;
+  background:#22c55e;
+  color:white;
+  cursor:pointer;
+}
+
+.item {
+  background:#1f2937;
+  padding:10px;
+  border-radius:8px;
+  margin-top:10px;
+  display:flex;
+  justify-content:space-between;
+}
+
+.small { font-size:12px; color:gray; }
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h2 style="text-align:center">🧠 Smart Buy</h2>
+
+<!-- Add Item -->
+<div class="card">
+<input id="name" placeholder="Item">
+<input id="place" placeholder="Place (optional)">
+<input id="price" type="number" placeholder="Price ₹">
+
+<select id="priority">
+<option value="high">🔥 High</option>
+<option value="medium">⚡ Medium</option>
+<option value="low">🟢 Low</option>
+</select>
+
+<button onclick="addItem()">Add</button>
+</div>
+
+<!-- Items -->
+<div class="card">
+<h3>Items</h3>
+<div id="items"></div>
+</div>
+
+<!-- Budget -->
+<div class="card">
+<input id="budget" type="number" placeholder="Enter budget ₹">
+<button onclick="searchItems()">Search</button>
+</div>
+
+<!-- Result -->
+<div id="result"></div>
+
+</div>
+
+<script>
+let items = JSON.parse(localStorage.getItem("items")) || [];
+
+function save() {
+  localStorage.setItem("items", JSON.stringify(items));
+}
+
+function render() {
+  const container = document.getElementById("items");
+  container.innerHTML = "";
+
+  const order = { high:1, medium:2, low:3 };
+
+  items.sort((a,b)=>order[a.priority]-order[b.priority]);
+
+  items.forEach((item,i)=>{
+    const div = document.createElement("div");
+    div.className="item";
+
+    div.innerHTML = `
+      <div>
+        <div>${item.name}</div>
+        <div class="small">${item.priority}</div>
+        ${item.place ? `<div class="small">📍 ${item.place}</div>` : ""}
+      </div>
+      <div>
+        ₹${item.price}
+        <button onclick="deleteItem(${i})">❌</button>
+      </div>
+    `;
+
+    container.appendChild(div);
+  });
+}
+
+function addItem() {
+  const name = document.getElementById("name").value;
+  const place = document.getElementById("place").value;
+  const price = document.getElementById("price").value;
+  const priority = document.getElementById("priority").value;
+
+  if(!name || !price) return;
+
+  items.push({ name, place, price:Number(price), priority });
+
+  document.getElementById("name").value="";
+  document.getElementById("place").value="";
+  document.getElementById("price").value="";
+
+  save();
+  render();
+}
+
+function deleteItem(i) {
+  items.splice(i,1);
+  save();
+  render();
+}
+
+function searchItems() {
+  const budget = Number(document.getElementById("budget").value);
+  if(!budget) return;
+
+  let bestTotal = 0;
+  let bestSet = [];
+
+  const n = items.length;
+
+  for(let i=0;i<(1<<n);i++){
+    let sum=0;
+    let subset=[];
+
+    for(let j=0;j<n;j++){
+      if(i & (1<<j)){
+        sum += items[j].price;
+        subset.push(items[j]);
+      }
+    }
+
+    if(sum <= budget && sum > bestTotal){
+      bestTotal = sum;
+      bestSet = subset;
+    }
+  }
+
+  const resultDiv = document.getElementById("result");
+  resultDiv.innerHTML = `<h3>Best: ₹${bestTotal} (Remaining: ₹${budget-bestTotal})</h3>`;
+
+  bestSet.forEach(item=>{
+    resultDiv.innerHTML += `
+      <div class="item">
+        <div>${item.name}</div>
+        <div>₹${item.price}</div>
+      </div>
+    `;
+  });
+}
+
+// TESTS
+console.assert((""||"")==="","String test");
+console.assert((Number(undefined)||0)===0,"Number test");
+
+render();
+</script>
+
+</body>
+</html>
